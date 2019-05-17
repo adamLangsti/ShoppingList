@@ -29,8 +29,19 @@ public class Item {
         this.mTitle = mTitle;
     }
     private static final String JSON_TITLE = "title";
-    public Boolean isChecked = false;
+    private Boolean isChecked = false;
 
+    public void check() {
+        isChecked = true;
+    }
+
+    public void unCheck() {
+        isChecked = false;
+    }
+
+    public boolean isChecked() {
+        return isChecked;
+    }
 
     public Item(JSONObject jo) throws JSONException {
         mTitle = jo.getString(JSON_TITLE);
